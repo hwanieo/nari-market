@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <div className='w-96 border rounded px-6 py-10 mx-auto overflow-hidden'>
-      <h1 className='text-center text-2xl font-bold mb-10'>로그인</h1>
+      <h1 className='text-center text-2xl font-bold mb-10'>회원가입</h1>
       <form className='flex flex-col gap-4'>
         <div className='flex flex-col'>
           <label id='email' className='text-sm'>
@@ -52,7 +52,7 @@ export default function Page() {
             type='submit'
             className='text-center border w-full mt-2 px-2 py-2 bg-[#03045e] hover:bg-[#480ca8] transition-all rounded-md text-white'
           >
-            로그인
+            회원가입
           </button>
         </div>
       </form>

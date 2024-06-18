@@ -1,5 +1,6 @@
 import { nunito } from '@/app/ui/fonts';
 import NavLinks from '@/app/ui/nav-links';
+import clsx from 'clsx';
 import Link from 'next/link';
 
 export default function MainNav() {
