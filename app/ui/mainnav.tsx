@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function MainNav() {
   return (
     <header
-      className={`${nunito.className} antialiased flex justify-between items-center px-40 py-4 shadow-sm sticky text-[#03045e] top-0 z-10`}
+      className={`${nunito.className} antialiased flex justify-between items-center px-40 py-4 shadow-sm sticky text-[#03045e] top-0 z-10 bg-white`}
     >
       <div className='flex items-center gap-10 text-nowrap'>
         <Link
