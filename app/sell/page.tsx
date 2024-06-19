@@ -1,6 +1,11 @@
+import { usercheck } from '@/app/libs/actions';
 import ImagePicker from '@/app/ui/sell/image-picker';
+import { createClient } from '@/app/utils/supabase/server';
+import { redirect } from 'next/navigation';
 
-export default function Page() {
+export default async function Page() {
+  await usercheck();
+
   return (
     <div className='px-6 py-10 mx-auto overflow-hidden'>
       <h1 className='text-center text-xl font-semibold'>판매등록</h1>
@@ -44,7 +49,7 @@ export default function Page() {
               type='submit'
               className='text-center border w-full mt-2 px-2 py-2 bg-[#03045e] hover:bg-[#480ca8] transition-all rounded-md text-white'
             >
-              상품 어필하기
+              판매등록
             </button>
           </div>
         </form>

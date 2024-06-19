@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 
 const dummy = [
@@ -164,19 +164,17 @@ export function Card({
   const { id, title, content, imageUrl } = item;
 
   return (
-    <div className='w-[250px] h-[500px] mx-auto flex flex-col shadow-sm hover:shadow-md border rounded-lg overflow-hidden cursor-pointer'>
-      <div className='w-full h-[300px] flex-[2] relative rounded-sm overflow-hidden'>
-        <Image src={imageUrl} fill objectFit='cover' alt={title} />
-      </div>
-      <div className='flex-1 p-4 flex flex-col justify-between'>
-        <span className='text-lg font-semibold'>{title}</span>
-        <p className='text-sm line-clamp-3 text-center'>{content}</p>
-        <div className='text-end'>
-          <Link href={`/buy/:${id}`} className=''>
-            상품 상세 정보
-          </Link>
+    <Link href={`/buy/${id}`}>
+      <div className='w-[250px] h-[500px] mx-auto flex flex-col shadow-sm hover:shadow-md border rounded-lg overflow-hidden cursor-pointer'>
+        <div className='w-full h-[300px] flex-[2] relative rounded-sm overflow-hidden'>
+          <Image src={imageUrl} layout='fill' objectFit='cover' alt={title} />
+        </div>
+        <div className='flex-1 p-4 flex flex-col justify-between'>
+          <span className='text-lg font-semibold'>{title}</span>
+          <p className='text-sm line-clamp-3 text-center'>{content}</p>
+          <div className='text-end'></div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

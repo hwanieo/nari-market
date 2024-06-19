@@ -2,11 +2,11 @@
 
 import clsx from 'clsx';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { redirect, usePathname } from 'next/navigation';
 
 const links = [
   {
-    name: '구매하기',
+    name: '중고매물',
     href: '/buy',
   },
   {

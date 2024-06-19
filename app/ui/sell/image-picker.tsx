@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { ChangeEvent, useRef, useState } from 'react';
 
 export default function ImagePicker() {
