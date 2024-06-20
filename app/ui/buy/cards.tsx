@@ -1,6 +1,6 @@
 import { getAllProducts } from '@/app/libs/actions';
 import { Product } from '@prisma/client';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
 // const dummy = [
@@ -162,15 +162,13 @@ export default async function CardWrapper() {
 export function Card({ item }: { item: Product }) {
   const { id, title, description, imageUrl } = item;
 
-  console.log(imageUrl);
-
   return (
     <Link href={`/buy/${id}`}>
       <div className='w-[250px] h-[500px] mx-auto flex flex-col shadow-sm hover:shadow-md border rounded-lg overflow-hidden cursor-pointer'>
         <div className='w-full h-[300px] flex-[2] relative rounded-sm overflow-hidden'>
           {!imageUrl && <div>이미지가 없습니다 ㅠㅠ</div>}
           {imageUrl && (
-            <Image src={imageUrl} layout='fill' objectFit='cover' alt={title} />
+            <Image src={imageUrl} fill alt={title} className='object-cover' />
           )}
         </div>
         <div className='flex-1 p-4 flex flex-col justify-between'>

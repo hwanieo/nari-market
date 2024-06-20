@@ -1,5 +1,5 @@
 import { getProduct } from '@/app/libs/actions';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 
 export default async function Page({ params }: { params: { id: string } }) {
   const id = params.id;
@@ -16,9 +16,9 @@ export default async function Page({ params }: { params: { id: string } }) {
         {product.imageUrl && (
           <Image
             src={product.imageUrl}
-            layout='fill'
-            objectFit='cover'
+            fill
             alt={product.title}
+            className='object-cover'
           />
         )}
       </div>

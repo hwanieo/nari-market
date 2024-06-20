@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { ChangeEvent, useRef, useState } from 'react';
 
 export default function ImagePicker() {
@@ -40,7 +40,7 @@ export default function ImagePicker() {
         className='w-52 h-52 border rounded-md cursor-pointer relative'
       >
         {imageSrc ? (
-          <Image src={imageSrc} layout='fill' objectFit='cover' alt='이미지' />
+          <Image src={imageSrc} fill alt='이미지' className='object-cover' />
         ) : (
           <span className='flex items-center justify-center h-full text-gray-500'>
             이미지를 선택하세요

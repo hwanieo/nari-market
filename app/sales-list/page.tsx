@@ -1,5 +1,5 @@
 import { getSalesList, usercheck } from '@/app/libs/actions';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default async function Page() {
@@ -19,9 +19,9 @@ export default async function Page() {
                   {product.imageUrl && (
                     <Image
                       src={product.imageUrl}
-                      layout='fill'
-                      objectFit='cover'
+                      fill
                       alt={product.title}
+                      className='object-cover'
                     />
                   )}
                 </div>
