@@ -7,6 +7,7 @@ import { z } from 'zod';
 import { v4 as uuid } from 'uuid';
 import prismaClient from '@/prisma/prisma.client';
 import { SupabaseClient } from '@supabase/supabase-js';
+import { unstable_noStore as noStore } from 'next/cache';
 
 export async function login(formData: FormData) {
   // type-casting here for convenience
@@ -158,12 +159,16 @@ export async function registerProduct(prevState: State, formData: FormData) {
 }
 
 export async function getAllProducts() {
+  noStore();
+
   const products = await prismaClient.product.findMany();
 
   return products;
 }
 
 export async function getProduct(id: string) {
+  noStore();
+
   const product = await prismaClient.product.findUnique({ where: { id } });
 
   await prismaClient.product.update({
@@ -175,6 +180,8 @@ export async function getProduct(id: string) {
 }
 
 export async function getSalesList() {
+  noStore();
+
   const supabase = createClient();
 
   const { user } = (await supabase.auth.getUser()).data;
