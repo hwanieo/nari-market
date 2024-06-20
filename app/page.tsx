@@ -5,7 +5,7 @@ export default function Home() {
     <main
       className={`${nunito.className} antialiased flex h-[calc(100vh-64px)] flex-col items-center justify-between p-24`}
     >
-      홈 페이지
+      홈페이지
     </main>
   );
 }
