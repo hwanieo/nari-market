@@ -20,6 +20,7 @@ model Product {
   description String
   imageUrl    String?
   price       Int
+  views       Int      @default(0)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   userId      String

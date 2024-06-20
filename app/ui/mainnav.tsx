@@ -1,9 +1,7 @@
 import AuthAction from '@/app/ui/auth-action';
 import { nunito } from '@/app/ui/fonts';
 import NavLinks from '@/app/ui/nav-links';
-import { createClient } from '@/app/utils/supabase/server';
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
 
 export default async function MainNav() {
   return (

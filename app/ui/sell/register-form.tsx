@@ -1,6 +1,6 @@
 'use client';
 
-import { State, registerProduct } from '@/app/libs/actions';
+import { registerProduct } from '@/app/libs/actions';
 import ImagePicker from '@/app/ui/sell/image-picker';
 import { useFormState } from 'react-dom';
 
@@ -12,7 +12,7 @@ export default function RegisterForm() {
   return (
     <form
       action={formAction}
-      className='mt-10 flex-1 flex flex-col justify-between gap-4'
+      className='mt-5 flex-1 flex flex-col justify-between gap-4'
     >
       <div className='flex flex-col'>
         <label id='title' className='text-sm'>
